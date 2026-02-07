@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Factory Town</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="gameCanvas"></canvas>
+
+  <div id="hud">
+    <div id="phase-banner" class="hidden"></div>
+
+    <div id="controls">
+      <div class="control-group">
+        <label>Wages: <span id="wage-value">5</span></label>
+        <input type="range" id="wage-slider" min="1" max="20" value="5" step="1">
+      </div>
+      <div class="control-group">
+        <label>Shirt Price: <span id="price-value">10</span></label>
+        <input type="range" id="price-slider" min="1" max="30" value="10" step="1">
+      </div>
+      <div id="build-buttons">
+        <button id="btn-housing" title="Build Housing (1)">Housing</button>
+        <button id="btn-seat" title="Add Work Seat (2)">Work Seat</button>
+        <button id="btn-canal" title="Dig Canal (3)" class="hidden">Canal</button>
+        <button id="btn-dump-waste" title="Dump Waste (4)" class="hidden">Dump Waste</button>
+      </div>
+    </div>
+
+    <div id="info-panel">
+      <div id="info-workers">Workers: <span>0</span></div>
+      <div id="info-production">Production: <span>0</span>/tick</div>
+      <div id="info-warehouse">Warehouse: <span>0</span></div>
+      <div id="info-money">Money: <span>100</span></div>
+      <div id="info-unrest">Unrest: <span>0%</span></div>
+    </div>
+  </div>
+
+  <div id="meeting-overlay" class="hidden">
+    <div id="meeting-dialog">
+      <h2 id="meeting-title">Political Meeting</h2>
+      <p id="meeting-description"></p>
+      <div id="meeting-choices"></div>
+    </div>
+  </div>
+
+  <div id="start-screen">
+    <h1>Factory Town</h1>
+    <p>You are the owner of a shirt-making factory on a river.</p>
+    <p class="subtitle">Set wages. Build housing. Watch what happens.</p>
+    <button id="btn-start">Begin</button>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
