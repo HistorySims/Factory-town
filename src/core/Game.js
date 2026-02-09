@@ -94,7 +94,7 @@ export class Game {
     this.housingSystem = new HousingSystem(this.entityManager, this.tileMap, this.state, this.eventBus);
 
     // Renderer
-    this.renderer = new Renderer(canvas, this.camera, this.entityManager, this.tileMap, this.state, this.mapData);
+    this.renderer = new Renderer(canvas, this.camera, this.entityManager, this.tileMap, this.state, this.mapData, this.input);
 
     // UI
     this.meetingDialog = new MeetingDialog(this.state, this.eventBus);

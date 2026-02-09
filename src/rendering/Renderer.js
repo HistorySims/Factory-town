@@ -5,7 +5,7 @@ import { EffectsRenderer } from './EffectsRenderer.js';
 import { HudRenderer } from './HudRenderer.js';
 
 export class Renderer {
-  constructor(canvas, camera, entityManager, tileMap, gameState, mapData) {
+  constructor(canvas, camera, entityManager, tileMap, gameState, mapData, input) {
     this.canvas = canvas;
     this.ctx = canvas.getContext('2d');
     this.camera = camera;
@@ -14,7 +14,7 @@ export class Renderer {
     this.buildingRenderer = new BuildingRenderer(entityManager, camera);
     this.agentRenderer = new AgentRenderer(entityManager, camera);
     this.effectsRenderer = new EffectsRenderer(entityManager, tileMap, camera, gameState);
-    this.hudRenderer = new HudRenderer(camera, gameState, tileMap);
+    this.hudRenderer = new HudRenderer(camera, gameState, tileMap, () => input.isTouchDevice);
   }
 
   update() {
